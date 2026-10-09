@@ -1,0 +1,4 @@
+{% extends 'pharmacy/base.html' %}{% block title %}راپورونه{% endblock %}{% block content %}
+<header class="page-head"><div><h1>📊 راپورونه</h1><p>د خرڅلاو لنډ مالي راپور</p></div></header>
+<section class="cards"><div class="stat"><span>د نن خرڅلاو</span><strong>{{ today_total }}</strong><small>افغانۍ</small></div><div class="stat blue"><span>د میاشتې خرڅلاو</span><strong>{{ month_total }}</strong><small>افغانۍ</small></div><div class="stat green"><span>اټکلي ناخالصه ګټه</span><strong>{{ estimated_profit }}</strong><small>د ثبت شوي پېرلو قیمت له مخې</small></div></section>
+<div class="panel"><p class="muted">یادونه: دا لومړنی راپور دی. د کره ګټې لپاره باید د هر Batch د پېرلو قیمت او د سټاک بدلونونه په دوامداره توګه ثبت شي.</p></div>{% endblock %}

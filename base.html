@@ -1,0 +1,9 @@
+{% load static %}
+<!doctype html><html lang="ps" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}د درملتون مدیریت{% endblock %}</title><link rel="stylesheet" href="{% static 'pharmacy/style.css' %}"></head><body>
+{% if user.is_authenticated %}<aside class="sidebar"><div class="brand">💊 درملتون</div><div class="owner">Zabihullah Lakanwal</div>
+<nav><a href="/">🏠 کورپاڼه</a><a href="/medicines/">💊 درمل</a><a href="/sales/">🧾 خرڅلاو</a><a href="/suppliers/">🏭 عرضه کوونکي</a><a href="/reports/">📊 راپورونه</a><a href="/admin/">⚙️ تنظیمات</a>
+<form method="post" action="/accounts/logout/">{% csrf_token %}<button class="logout" type="submit">وتل</button></form></nav></aside>{% endif %}
+<main class="{% if user.is_authenticated %}content{% else %}login-area{% endif %}">
+{% if messages %}{% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}{% endif %}
+{% block content %}{% endblock %}<footer>Pharmacy Management System · Zabihullah Lakanwal · 0771671501</footer></main></body></html>

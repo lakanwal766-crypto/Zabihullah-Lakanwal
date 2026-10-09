@@ -1,0 +1,3 @@
+{% extends 'pharmacy/base.html' %}{% block title %}نوی عرضه کوونکی{% endblock %}{% block content %}
+<header class="page-head"><div><h1>+ د عرضه کوونکي ثبت</h1></div><a class="secondary" href="/suppliers/">بېرته</a></header>
+<form method="post" class="panel form-grid">{% csrf_token %}<label>د شرکت/عرضه کوونکي نوم *<input required name="name"></label><label>د اړیکې شمېره<input name="phone"></label><label>پته<input name="address"></label><label>یادښت<input name="notes"></label><div class="form-actions"><button class="primary" type="submit">ثبت کړه</button></div></form>{% endblock %}
